@@ -1,0 +1,123 @@
+.container {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+.cube {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(185deg) rotateY(150deg) rotateZ(315deg);
+    animation: rotate 10s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #f6ff00;
+    opacity: 0.9;
+    border: 1px solid #000;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.face:before {
+    content: "";
+    border-radius: 50%;
+    width: 20%;
+    height: 20%;
+    background: #ff1100;
+}
+
+.base {
+    width: 200px;
+    height: 200px;
+    transform: translateY(73px) rotateX(90deg);
+    border: 0;
+    background: #91ff00;
+}
+
+.one {
+    transform: translateZ(100px);
+}
+
+.two {
+    transform: translateX(-100px) rotateY(-90deg);
+}
+
+.two::before {
+    background: transparent;
+    box-shadow:
+        #ff0000 -50px -50px 0px 0px,
+        #ff0000 50px 50px 0px 0px;
+}
+
+.three {
+    transform: translateY(100px) rotateX(90deg);
+}
+
+.three::before {
+    box-shadow:
+        #ff0000 -50px 50px 0px 0px,
+        #ff0000 50px -50px 0px 0px;
+}
+
+.four {
+    transform: translateY(-100px) rotateX(90deg);
+}
+
+.four::before {
+    background: transparent;
+    box-shadow:
+        #ff0000 -50px -50px 0px 0px,
+        #ff0000 50px 50px 0px 0px,
+        #ff0000 -50px 50px 0px 0px,
+        #ff0000 50px -50px 0px 0px;
+}
+
+.five {
+    transform: translateX(100px) rotateY(90deg);
+}
+
+.five::before {
+    box-shadow:
+        #ff0000 -50px -50px 0px 0px,
+        #ff0000 50px 50px 0px 0px,
+        #ff0000 -50px 50px 0px 0px,
+        #ff0000 50px -50px 0px 0px,
+        #ff0000 0px 0px 0px 0px;
+}
+
+.six {
+    transform: translateZ(-100px);
+}
+
+.six::before {
+    background: transparent;
+    box-shadow:
+        #ff0000 -50px -50px 0px 0px,
+        #ff0000 50px 50px 0px 0px,
+        #ff0000 -50px 50px 0px 0px,
+        #ff0000 50px -50px 0px 0px,
+        #ff0000 50px 0px 0px 0px,
+        #ff0000 -50px 0px 0px 0px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(30deg) rotateY(0deg) rotateZ(30deg);
+    }
+
+    to {
+        transform: rotateX(30deg) rotateY(360deg) rotateZ(30deg);
+    }
+}
